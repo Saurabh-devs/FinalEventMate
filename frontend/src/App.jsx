@@ -121,7 +121,7 @@ const ConditionalFooter = () => {
   );
 };
 
-// ✅ User Dashboard Routes
+// ✅ User Dashboard Routes (protected)
 const DashboardRoutes = () => (
   <DashboardLayout>
     <Routes>
@@ -136,31 +136,20 @@ const DashboardRoutes = () => (
         path="/datetimerangereactdatepicker"
         element={<DateTimeRangeReactDatePicker />}
       />
-
       <Route path="/photographers" element={<Photographers />} />
       <Route path="/photographer/:id" element={<PhotographerDetails />} />
-
       <Route path="/planners" element={<Planners />} />
       <Route path="/planner/:id" element={<PlannerDetails />} />
-
       <Route path="/cakes" element={<Cakes />} />
       <Route path="/cakes/:id" element={<CakeDetails />} />
-
       <Route path="/attire" element={<Attire />} />
       <Route path="/attire/:id" element={<AttireDetails />} />
-
       <Route path="/profilesettings" element={<Profilesettings />} />
-
-      {/* Recommendation Pages */}
-      <Route path="/modern" element={<Modern />} />
-      <Route path="/grand" element={<Grand />} />
-      <Route path="/elegant" element={<Elegant />} />
-      <Route path="/planning" element={<Planning />} />
     </Routes>
   </DashboardLayout>
 );
 
-// ✅ Owner Dashboard Routes
+// ✅ Owner Dashboard Routes (protected)
 const OwnerDashboardRoutes = () => (
   <OwnerDashboardLayout>
     <Routes>
@@ -173,7 +162,7 @@ const OwnerDashboardRoutes = () => (
   </OwnerDashboardLayout>
 );
 
-// ✅ App Routes
+// ✅ Main App Routes
 const AppRoutes = () => {
   const { isAuthenticated } = useAuth();
 
@@ -195,11 +184,17 @@ const AppRoutes = () => {
             }
           />
 
-          {/* Recommendations (now separate route) */}
+          {/* Public Pages */}
           <Route path="/recommendations" element={<Recommendations />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/venue/:venueId" element={<VenueDetails />} />
+
+          {/* ✅ Public Recommendation Pages */}
+          <Route path="/modern" element={<Modern />} />
+          <Route path="/grand" element={<Grand />} />
+          <Route path="/elegant" element={<Elegant />} />
+          <Route path="/planning" element={<Planning />} />
 
           {/* User Auth */}
           <Route path="/login" element={<Login />} />
@@ -213,7 +208,7 @@ const AppRoutes = () => {
           <Route path="/signup-owner" element={<SignupOwner />} />
           <Route path="/owner-email-otp" element={<OwnerEmailOtp />} />
 
-          {/* Dashboards */}
+          {/* ✅ Dashboards */}
           {isAuthenticated && (
             <Route
               path="/*"
