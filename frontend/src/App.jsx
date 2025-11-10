@@ -68,6 +68,7 @@ import OwnerProfile from "./Pages/OwnerProfile.jsx";
 import ManageHallsInfo from "./Pages/ManageHallsInfo.jsx";
 import ContactEventmate from "./Pages/ContactEventmate.jsx";
 
+
 // Recommendation Pages
 import Modern from "./Pages/Modern.jsx";
 import Grand from "./Pages/Grand.jsx";
@@ -189,6 +190,8 @@ const AppRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/venue/:venueId" element={<VenueDetails />} />
+                    {/* ✅ Public Grand Halls Page */}
+
 
           {/* ✅ Public Recommendation Pages */}
           <Route path="/modern" element={<Modern />} />
